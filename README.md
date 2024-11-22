@@ -1,3 +1,16 @@
+# Curb Appeal Evaluation App
+
+This project provides an API for evaluating the curb appeal of a property by uploading images and receiving an evaluation. It also integrates Stripe for payments, allowing users to purchase a detailed report based on the evaluation. The backend is built using **Flask** and the frontend is built with **React**.
+
+## Features
+
+- Upload property images and receive a curb appeal evaluation.
+- Simulate interaction with an evaluation API (Anthropic or similar).
+- Process payments via Stripe for generating detailed evaluation reports.
+- Allow users to download the full report after payment.
+
+## File Structure
+
 curb-appeal/
 ├── backend/                      # Backend directory for Python code
 │   ├── app.py                    # Main Flask app with routes for evaluating, payments, and report generation
@@ -26,3 +39,30 @@ curb-appeal/
 ├── .gitignore                    # Main gitignore (includes backend & frontend files like .env and node_modules)
 └── README.md                     # Project documentation (installation, setup, etc.)
 # ChatGPT-Curb
+
+
+
+## Backend (Flask API)
+
+The backend is built using **Flask** and handles the following:
+
+- **Image Upload and Evaluation**: Users can upload images for property evaluation, and the API returns a score, observations, and recommendations.
+- **Stripe Payment Integration**: Allows users to pay for a detailed report.
+- **Report Generation**: After payment, the backend generates a PDF report of the evaluation.
+
+### Backend File Descriptions
+
+- **`app.py`**: Main Flask application file with routes to handle image uploads, Stripe payment, and generating reports.
+- **`config.py`**: Configuration file for storing environment variables such as API keys.
+- **`requirements.txt`**: Python dependencies required for the backend (`Flask`, `stripe`, etc.).
+- **`uploads/`**: Directory where uploaded images and generated reports are saved.
+- **`utils/`**:
+  - **`file_handler.py`**: Helper functions for file handling (saving, deleting images).
+  - **`report_generator.py`**: Functions for generating the full PDF report after payment.
+
+### Backend Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/curb-appeal.git
+   cd curb-appeal/backend
